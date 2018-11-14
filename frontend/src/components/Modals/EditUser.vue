@@ -13,7 +13,7 @@
       <b-form-group label="Password" :label-cols="3" :horizontal="true">
         <b-form-input id="password" v-model="password" type="password" aria-describedby="passwordIncorrect" :state="!$v.password.$invalid"></b-form-input>
         <b-form-invalid-feedback id="passwordIncorrect">
-          This is a required field and must be at least 3 characters
+          This is a required field and must be at least 8 characters
         </b-form-invalid-feedback>
       </b-form-group>
       <b-button block variant="success" @click='submitModal' :disabled="$v.$invalid">Save</b-button>
