@@ -1,0 +1,13 @@
+*.sql
+*/__pycache__/
+*.pyc
+config.yaml
+.DS_Store
+DontSync/
+logs/*
+uploads/pictures/pops/*
+static/img/Logo*
+dist/
+venv/
+vuedash.ini
+.vscode/

@@ -1,0 +1,16 @@
+[uwsgi]
+module = wsgi:app
+
+master = true
+processes = 5
+socket = /tmp/vuedash.sock
+chmod-socket = 666
+vacuum = true
+uid = www-data
+gid = www-data
+#callable = app
+enable-treads = True
+plugin = python3
+venv = /path/to/VueFlaskAuth/venv
+
+log-format = %(addr) - %(user) [%(ltime)] "%(method) %(uri) %(proto)" %(status) %(size) "%(referer)" "%(uagent)"
