@@ -88,3 +88,12 @@ class Users:
       "email": userInfo[2]
     }
     return ret
+
+  def postUserInfo(self, data, form):
+    form = json.loads(form)
+    
+    if len(form['password']) > 5:
+      password = bcrypt.hashpw(form["password"].encode('utf-8'), bcrypt.gensalt(self.rounds))
+      self.db.query("UPDATE users SET pass = %s WHERE user = %s",[password, form["username"]])
+
+    return {"result": "success"}
