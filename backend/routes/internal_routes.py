@@ -21,7 +21,7 @@ def token_required(f):
     try:
         token = auth_headers.encode()
         data = jwt.decode(token, current_app.config['SECRET_KEY'])
-        if not data["rol"] or not data["sub"] or not data["exp"] or not data["iat"]:
+        if not data["sub"] or not data["exp"] or not data["iat"]:
             return json.dumps({"message": "Token malformed"}), 401
         user = users.verify_user(data)
         if not user:
@@ -69,7 +69,7 @@ def login():
 @internal_routes.route('/users/getUserInfo')
 @token_required
 def getUserInfo(data):
-  return json.dumps(users.getUserInfo(data, request.args.get('userID')))
+  return json.dumps(users.getUserInfo(data))
 
 @internal_routes.route('/users/postUserInfo',methods=["POST"])
 @token_required
