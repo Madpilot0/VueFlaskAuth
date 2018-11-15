@@ -38,7 +38,7 @@ On a clean machine
 ```bash
 sudo apt update
 sudo apt upgrade
-sudo apt install -y vim git python3-dev python3-pip virtualenv npm nodejs libmariadbclient-dev uwsgi supervisor python3-flask uwsgi-plugin-python
+sudo apt install -y vim git python3-dev python3-pip virtualenv npm nodejs libmariadbclient-dev uwsgi supervisor uwsgi-plugin-python3
 ```
 
 Import the following SQL
@@ -92,6 +92,8 @@ In 2 seperate terminal windows
 # Building
 Make sure the address `baseUrl` in `frontend/src/store/index.js` is correct
 ```shell
+cd frontend
+npm install
 npm run build
 uwsgi --init vuedash.ini
 
@@ -103,5 +105,4 @@ sudo supervisorctl start vuedash
 # TODO
 * Forgot password
 * User Management
-  * Add user
 * Add favicon and enable them in `run.py`
