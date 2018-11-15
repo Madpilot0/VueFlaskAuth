@@ -1,13 +1,14 @@
 # VueFlaskAuth
 Template for VueFlask Dashboards. Using the [CoreUI](https://coreui.io/vue/) theme.  
-This template is not finished yet but a (working) example of combinding Vue, Flask and JWT for authentication.
+This template is not finished yet but a (working) example of combinding Vue, Flask and JWT for authentication.  
+It is meant as a template and requires (a lot of) adjustments but should help to get started.
 
 # Configs
 Nginx
 ```
 location / {
   include uwsgi_params;
-  uwsgi_pass unix:/tmp/tussentool.sock;
+  uwsgi_pass unix:/tmp/vuedash.sock;
   uwsgi_read_timeout 300;
 }
 ```
